@@ -19,13 +19,13 @@ do
 	arr[$((count++))]=${dict["n$i"]}
 done
 
-#descending order
+#Ascending order
 
 for ((i=0;i<4;i++))
 do
 	for ((j=0;j<4;j++))
 	do
-		if [ ${arr[$i]} -gt ${arr[$j]} ]
+		if [ ${arr[$i]} -lt ${arr[$j]} ]
 		then
 			temp=${arr[$i]}    #swapping
 			arr[$i]=${arr[$j]}
@@ -33,4 +33,5 @@ do
 		fi
 	done
 done
-echo "${arr[@]}"
+echo "sorted array in Ascending order: " ${arr[@]}
+
