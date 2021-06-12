@@ -18,4 +18,19 @@ for ((i=1;i<=${#dict[@]};i++ ))
 do
 	arr[$((count++))]=${dict["n$i"]}
 done
+
+#descending order
+
+for ((i=0;i<4;i++))
+do
+	for ((j=0;j<4;j++))
+	do
+		if [ ${arr[$i]} -gt ${arr[$j]} ]
+		then
+			temp=${arr[$i]}    #swapping
+			arr[$i]=${arr[$j]}
+			arr[$j]=$temp
+		fi
+	done
+done
 echo "${arr[@]}"
