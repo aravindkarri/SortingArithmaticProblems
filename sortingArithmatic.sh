@@ -13,4 +13,9 @@ dict["n2"]=$(($a*$b+$c))
 dict["n3"]=$(($c+$a/$b))
 dict["n4"]=$(($a%$b+$c))
 
-echo ${dict[@]}
+count=0
+for ((i=1;i<=${#dict[@]};i++ ))
+do
+	arr[$((count++))]=${dict["n$i"]}
+done
+echo "${arr[@]}"
